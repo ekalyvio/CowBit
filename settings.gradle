@@ -1,1 +1,1 @@
-include ':SensorApp'
+include ':SensorApp', ':ServerApp', ':commons'
