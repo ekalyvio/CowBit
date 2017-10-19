@@ -69,7 +69,7 @@ public class SensorFusion implements Runnable {
         }
     };*/
 
-    public void Init() {
+    public void Init() throws IOException {
 /*        _gyroIntTriggered = new AtomicInteger(0);
         _accelIntTriggered = new AtomicInteger(0);*/
 
@@ -113,7 +113,9 @@ public class SensorFusion implements Runnable {
             gyro.SetupWrapToOne(true);
             //gyro.SetupFifo(Adafruit_FXAS21002C.FifoModeEnum.CircularBuffer, 16);
 
-            gyro.begin();
+            if (!gyro.begin()) {
+                throw new IOException("Gyro could not be initialized");
+            }
 
             devAccel = service.openI2cDevice(I2CInterface, Adafruit_FXOS8700CQ.FXOS8700CQ_ADDRESS);
             accell = new Adafruit_FXOS8700CQ(devAccel);
@@ -137,15 +139,16 @@ public class SensorFusion implements Runnable {
             accell.SetupMagnHybridAutoincMode(true);
             //accell.SetupMagnSensorDegausFreq(Adafruit_FXOS8700CQ.MagnSensorDegausFreqEnum.Disabled);
 
-            accell.begin();
+            if (!accell.begin())
+                throw new IOException("Accelerometer/Magnetometer could not be initialized");
         } catch (IOException e) {
-
-            e.printStackTrace();
+            CloseResources();
+            throw e;
         }
     }
 
-    public void Close() {
-        if (GpioGyro != null) {
+    private void CloseResources() {
+/*        if (GpioGyro != null) {
             try {
                 GpioGyro.close();
                 GpioGyro = null;
@@ -161,7 +164,7 @@ public class SensorFusion implements Runnable {
             } catch (IOException e) {
                 Log.w("MainActivity", "Unable to close GPIO", e);
             }
-        }
+        }*/
 
         // Step 5. Close the resource.
         if (devGyro != null) {
@@ -180,6 +183,10 @@ public class SensorFusion implements Runnable {
             }
             devAccel = null;
         }
+    }
+
+    public void Close() {
+        CloseResources();
     }
 
     public class IMUEvent {

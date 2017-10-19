@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.io.IOException;
+
 public class MainActivity extends Activity {
     private static final int INTERVAL_BETWEEN_VALUES = 10;
     private Handler mHandler = new Handler();
@@ -27,7 +29,12 @@ public class MainActivity extends Activity {
         super.onStart();
 
         SensorFusion sensorFusion = new SensorFusion();
-        sensorFusion.Init();
+        try {
+            sensorFusion.Init();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
 
         sensorFusionThread = new Thread(sensorFusion);
         sensorFusionThread.setPriority(Thread.MAX_PRIORITY);
