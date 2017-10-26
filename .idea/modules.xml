@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CowSensor.iml" filepath="$PROJECT_DIR$/CowSensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MobileApp/MobileApp.iml" filepath="$PROJECT_DIR$/MobileApp/MobileApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorApp/SensorApp.iml" filepath="$PROJECT_DIR$/SensorApp/SensorApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServerApp/ServerApp.iml" filepath="$PROJECT_DIR$/ServerApp/ServerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />

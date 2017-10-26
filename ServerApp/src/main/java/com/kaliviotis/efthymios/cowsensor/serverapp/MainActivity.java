@@ -38,6 +38,8 @@ public class MainActivity extends Activity {
 
     private Handler mServiceCheckHandler = new Handler();
 
+    private Thread uploaderThread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,8 @@ public class MainActivity extends Activity {
         server.stop();
         mNsdHelper.tearDown();
         mNsdHelper = null;
+
+        uploaderThread.interrupt();
 
         Log.d("MainActivity", "onPause");
         super.onPause();
@@ -94,6 +98,9 @@ public class MainActivity extends Activity {
             mNsdHelper.registerService(localPort);
             mServiceCheckHandler.postDelayed(mServiceRegisteredRunnable, 10000);
         }
+
+        uploaderThread = new Thread(new FirebaseUploaderRunnable());
+        uploaderThread.start();
     }
 
     NsdHelper.CallbackInterface registrationCallback = new NsdHelper.CallbackInterface() {
@@ -139,6 +146,4 @@ public class MainActivity extends Activity {
         Log.d("MainActivity", "onDestroy");
         super.onDestroy();
     }
-
-
 }

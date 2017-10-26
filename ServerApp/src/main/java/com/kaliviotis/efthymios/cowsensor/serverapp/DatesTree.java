@@ -57,7 +57,8 @@ public class DatesTree {
             _hours.put(hour, _minutes);
         }
 
-        _minutes.put(minute, stepsNum);
+        if (!_minutes.containsKey(minute))
+            _minutes.put(minute, stepsNum);
     }
     
     public void IterateItems(CallbackInterface callback) {

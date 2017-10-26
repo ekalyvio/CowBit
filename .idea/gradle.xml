@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/MobileApp" />
             <option value="$PROJECT_DIR$/SensorApp" />
             <option value="$PROJECT_DIR$/ServerApp" />
             <option value="$PROJECT_DIR$/commons" />

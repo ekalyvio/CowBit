@@ -20,19 +20,19 @@ public class SensorFusion implements Runnable {
     //   4 reserved
     //   8 reserved
     // eg. 3 for raw value store and steps recording
-    public static final int ProcessorType = 3;
+    public static final int ProcessorType = 2;
 
     // Raspberry Pi 3
     // --------------
-    public static final String I2CInterface = "I2C1";
+/*    public static final String I2CInterface = "I2C1";
     public static final String GyroInterruptPin = "BCM4";
-    public static final String AccelInterruptPin = "BCM14";
+    public static final String AccelInterruptPin = "BCM14";*/
 
     // Pico Pi
     // -------
-    // public static final String I2CInterface = "I2C2";
-    // public static final String GyroInterruptPin = "GPIO1_IO18";
-    // public static final String AccelInterruptPin = "GPIO1_IO19";
+    public static final String I2CInterface = "I2C2";
+    public static final String GyroInterruptPin = "GPIO1_IO18";
+    public static final String AccelInterruptPin = "GPIO1_IO19";
 
 
     Adafruit_FXAS21002C gyro = null;
