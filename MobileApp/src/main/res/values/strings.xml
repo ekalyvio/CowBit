@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Cowbit</string>
+    <string name="ok_text">OK</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="enter_email_hint">Enter your email address</string>
+    <string name="enter_password_hint">Enter your password</string>
+    <string name="login_button">Sign in</string>
+    <string name="wrong_username_message">Wrong username or password!</string>
+    <string name="error_text">Error</string>
+    <string name="no_use_permission">You have no permission to use this app. Please contact your system administrator.</string>
+    <string name="login_problem">We couldn\'t log you into the system. Please try again later.</string>
+    <string name="title_activity_cow_listing">CowListingActivity</string>
+    <string name="select_message">Please select a cow to continue</string>
+    <string name="change_name_button">Change name</string>
+    <string name="logout_button">Sign out</string>
+    <string name="enter_name_title">Enter a name</string>
+    <string name="enter_name_message">Please enter a new name for the cow:</string>
+    <string name="select_day_menu">Select a day</string>
+    <string name="select_month_menu">Select a month</string>
+    <string name="select_year_menu">Select a year</string>
+    <string name="hour_of_day_string">Hour of the day</string>
+    <string name="day_of_month_string">Day of the month</string>
+    <string name="month_of_year_string">Month of the year</string>
 </resources>

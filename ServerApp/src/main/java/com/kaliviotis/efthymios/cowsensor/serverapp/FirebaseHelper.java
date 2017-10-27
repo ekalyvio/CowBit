@@ -27,12 +27,13 @@ public class FirebaseHelper {
     private static final String TAG = "FirebaseHelper";
 
     private FirebaseAuth mAuth;
-    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private FirebaseDatabase mDatabase;// = FirebaseDatabase.getInstance();
     private FirebaseUser mCurrentUser;
     private String mClientID;
 
     public FirebaseHelper() {
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance();
         mCurrentUser = null;
         mClientID = null;
     }

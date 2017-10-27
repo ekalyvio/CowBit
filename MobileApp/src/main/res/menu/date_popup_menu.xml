@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/day"
+        android:title="@string/select_day_menu"/>
+
+    <item
+        android:id="@+id/month"
+        android:title="@string/select_month_menu"/>
+
+    <item
+        android:id="@+id/year"
+        android:title="@string/select_year_menu"/>
+</menu>
