@@ -44,7 +44,6 @@ public class StepsDataStorage implements Runnable {
     }
 
     public static void RegisterSteps(int iHalfStepsCount) {
-        //TODO: Check current Hour:Minute to the previous 'stored' one. If they are different, store the steps number (iHalfStepsCount - iLastStoredHalfSteps) and update the new date on the var and also make equal to iHalfStepsCount the last Stored Steps number.
         long curDate = new Date().getTime();
         if ((curDate - lLastDateStored) > 60000) {
             lLastDateStored = (curDate / 60000) * 60000;
@@ -59,7 +58,6 @@ public class StepsDataStorage implements Runnable {
             Log.d("RegisterSteps", "Entered");
             Date prevDate = new Date(dateTime);
 
-            // TODO: Make the file per hour.
             DateFormat dateFileFormat = new SimpleDateFormat("yyyyMMdd_HH");
 
             DateFormat dateLineFormat = new SimpleDateFormat("yyyyMMddHHmm");
@@ -126,7 +124,6 @@ public class StepsDataStorage implements Runnable {
                 Arrays.sort(files);
                 Log.d("Files", "Size: "+ files.length);
 
-                //TODO: Do the following...
                 //  1) Get the unique ID of the device.
                 //  2) Search directory for files other than the last one and get them on a list (sorted ascending).
                 //  3) If the list is empty then close the socket and terminate the function.

@@ -231,8 +231,6 @@ public class CowDetailsActivity extends AppCompatActivity
             public void onCancelled(DatabaseError databaseError) {
 
             }
-            // TODO: implement the ChildEventListener methods as documented above
-            // ...
         };
     }
 

@@ -87,8 +87,7 @@ public class CommunicationRunnable implements Runnable {
                             throw new IOException("NULL line returned");
                     }
                     catch (IOException e) {
-                        //TODO: Possibly comment out the bellow line.
-                        e.printStackTrace();
+                        //e.printStackTrace();
                         output.write(Constants.ErrorLine);
                         output.newLine();
                         break;

@@ -292,8 +292,7 @@ public class SensorFusion implements Runnable {
 //                }
 
                 if ((ProcessorType & 0x01) != 0) {
-                    // TODO: Make it 10000 after testing.
-                    if (eventsList.size() >= 1000) {
+                    if (eventsList.size() >= 10000) {
                         Log.d("Store", "Storing..." + String.valueOf(System.currentTimeMillis()));
                         Log.d("Stepper", "Steps: " + String.valueOf(stepDetector.GetCompletedSteps()));
 
