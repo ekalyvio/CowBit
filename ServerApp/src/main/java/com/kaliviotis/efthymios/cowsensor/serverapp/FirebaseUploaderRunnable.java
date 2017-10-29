@@ -43,8 +43,8 @@ public class FirebaseUploaderRunnable implements Runnable {
                         ProcessFiles();
                     }
                 }
-                Thread.sleep(15000);
-//                Thread.sleep(5 * 60 * 1000);
+//                Thread.sleep(15000);
+                Thread.sleep(5 * 60 * 1000);
             }
         } catch (InterruptedException ex) {
             //Thread.currentThread().interrupt(); // very important
@@ -130,7 +130,7 @@ public class FirebaseUploaderRunnable implements Runnable {
                 firebaseHelper.updateChildren(childUpdates);
             } catch (Exception e) {
                 //TODO: Uncomment the bellow line
-                //files[i].delete();
+                files[i].delete();
             }
         }
 

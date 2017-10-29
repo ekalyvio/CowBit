@@ -155,7 +155,7 @@ public class StepsDataStorage implements Runnable {
                         int iLinesNum = in.read();
                         if (iLinesNum == linesNumber) {
                             //TODO: Uncomment the bellow line
-//                            files[i].delete();
+                            files[i].delete();
                         }
                     }
                     if (ln.equals(Constants.ErrorLine)) {
@@ -224,7 +224,7 @@ public class StepsDataStorage implements Runnable {
 
     @Override
     public void run() {
-        long lMinutesToUpload = 1 * 60 * 1000;
+        long lMinutesToUpload = 4 * 60 * 60 * 1000;
         DoStore();
         long curDate = new Date().getTime();
         if ((curDate - lLastUpload) > lMinutesToUpload) {
