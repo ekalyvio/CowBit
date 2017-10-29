@@ -30,6 +30,7 @@ import java.util.Date;
  */
 
 public class StepsDataStorage implements Runnable {
+    private static final long lMinutesToUpload = 4 * 60 * 60 * 1000;
     private static int iLastStoredHalfSteps = 0;
     private static long lLastDateStored = 0;
     public int stepsCount;
@@ -224,7 +225,6 @@ public class StepsDataStorage implements Runnable {
 
     @Override
     public void run() {
-        long lMinutesToUpload = 4 * 60 * 60 * 1000;
         DoStore();
         long curDate = new Date().getTime();
         if ((curDate - lLastUpload) > lMinutesToUpload) {
