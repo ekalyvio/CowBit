@@ -128,9 +128,9 @@ public class FirebaseUploaderRunnable implements Runnable {
 
             try {
                 firebaseHelper.updateChildren(childUpdates);
-            } catch (Exception e) {
                 //TODO: Uncomment the bellow line
                 files[i].delete();
+            } catch (Exception e) {
             }
         }
 
